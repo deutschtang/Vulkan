@@ -18,7 +18,6 @@
 		A9532B781EF99937000A09E2 /* libMoltenVK.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A9581BAB1EEB64EC00247309 /* libMoltenVK.dylib */; };
 		A9581BA61EEB648800247309 /* libassimp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9581BA51EEB648800247309 /* libassimp.a */; };
 		A9581BA81EEB648C00247309 /* libzlibstatic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9581BA71EEB648C00247309 /* libzlibstatic.a */; };
-		A9581BAC1EEB64EC00247309 /* libMoltenVK.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A9581BAB1EEB64EC00247309 /* libMoltenVK.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A9581BAE1EEB651100247309 /* libassimp.3.3.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A9581BAD1EEB651100247309 /* libassimp.3.3.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A9581BAF1EEB651500247309 /* libassimp.3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A9581BAD1EEB651100247309 /* libassimp.3.3.1.dylib */; };
 		A98703D91E9D382A0066959C /* data in Resources */ = {isa = PBXBuildFile; fileRef = A98703D81E9D382A0066959C /* data */; };
@@ -50,6 +49,9 @@
 		C9A79EFC204504E000696219 /* VulkanUIOverlay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9A79EFB204504E000696219 /* VulkanUIOverlay.cpp */; };
 		C9A79EFD2045051D00696219 /* VulkanUIOverlay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9A79EFB204504E000696219 /* VulkanUIOverlay.cpp */; };
 		C9A79EFE2045051D00696219 /* VulkanUIOverlay.h in Sources */ = {isa = PBXBuildFile; fileRef = C9A79EFA204504E000696219 /* VulkanUIOverlay.h */; };
+		F58CC277232949450057D5D7 /* imgui_widgets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F58CC276232949440057D5D7 /* imgui_widgets.cpp */; };
+		F58CC278232949450057D5D7 /* imgui_widgets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F58CC276232949440057D5D7 /* imgui_widgets.cpp */; };
+		F58CC27923294A8A0057D5D7 /* libMoltenVK.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A9581BAB1EEB64EC00247309 /* libMoltenVK.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,7 +61,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 6;
 			files = (
-				A9581BAC1EEB64EC00247309 /* libMoltenVK.dylib in CopyFiles */,
+				F58CC27923294A8A0057D5D7 /* libMoltenVK.dylib in CopyFiles */,
 				A9581BAE1EEB651100247309 /* libassimp.3.3.1.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,10 +104,10 @@
 		A951FF121E9C349000FA9144 /* VulkanTexture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VulkanTexture.hpp; sourceTree = "<group>"; };
 		A951FF131E9C349000FA9144 /* VulkanTools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VulkanTools.cpp; sourceTree = "<group>"; };
 		A951FF141E9C349000FA9144 /* VulkanTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VulkanTools.h; sourceTree = "<group>"; };
-		A9532B751EF99894000A09E2 /* libMoltenVK.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMoltenVK.dylib; path = MoltenVK/iOS/libMoltenVK.dylib; sourceTree = "<group>"; };
+		A9532B751EF99894000A09E2 /* libMoltenVK.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMoltenVK.dylib; path = MoltenVK/iOS/dynamic/libMoltenVK.dylib; sourceTree = "<group>"; };
 		A9581BA51EEB648800247309 /* libassimp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libassimp.a; path = "assimp/assimp-ios/lib/iOS/arm64/libassimp.a"; sourceTree = "<group>"; };
 		A9581BA71EEB648C00247309 /* libzlibstatic.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libzlibstatic.a; path = "assimp/assimp-ios/lib/libzlibstatic.a"; sourceTree = "<group>"; };
-		A9581BAB1EEB64EC00247309 /* libMoltenVK.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMoltenVK.dylib; path = MoltenVK/macOS/libMoltenVK.dylib; sourceTree = "<group>"; };
+		A9581BAB1EEB64EC00247309 /* libMoltenVK.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMoltenVK.dylib; path = MoltenVK/macOS/dynamic/libMoltenVK.dylib; sourceTree = "<group>"; };
 		A9581BAD1EEB651100247309 /* libassimp.3.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libassimp.3.3.1.dylib; path = "assimp/assimp-macos/lib/libassimp.3.3.1.dylib"; sourceTree = "<group>"; };
 		A977BCFE1B66BB010067E5BF /* examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A977BD211B67186B0067E5BF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -155,6 +157,7 @@
 		C9A79EF02045045E00696219 /* imgui.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = imgui.cpp; path = ../external/imgui/imgui.cpp; sourceTree = "<group>"; };
 		C9A79EFA204504E000696219 /* VulkanUIOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VulkanUIOverlay.h; sourceTree = "<group>"; };
 		C9A79EFB204504E000696219 /* VulkanUIOverlay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VulkanUIOverlay.cpp; sourceTree = "<group>"; };
+		F58CC276232949440057D5D7 /* imgui_widgets.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = imgui_widgets.cpp; path = ../external/imgui/imgui_widgets.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				C9A79EE92045045D00696219 /* imconfig.h */,
+				F58CC276232949440057D5D7 /* imgui_widgets.cpp */,
 				C9A79EEA2045045D00696219 /* imgui_demo.cpp */,
 				C9A79EEB2045045D00696219 /* imgui_draw.cpp */,
 				C9A79EEC2045045E00696219 /* imgui_internal.h */,
@@ -446,6 +450,7 @@
 				A951FF171E9C349000FA9144 /* VulkanDebug.cpp in Sources */,
 				A9BC9B1C1EE8421F00384233 /* MVKExample.cpp in Sources */,
 				C9A79EFC204504E000696219 /* VulkanUIOverlay.cpp in Sources */,
+				F58CC277232949450057D5D7 /* imgui_widgets.cpp in Sources */,
 				A9B67B7A1C3AAE9800373FFD /* DemoViewController.mm in Sources */,
 				A9B67B781C3AAE9800373FFD /* AppDelegate.m in Sources */,
 				C9788FD52044D78D00AB0892 /* VulkanAndroid.cpp in Sources */,
@@ -461,6 +466,7 @@
 			files = (
 				C9A79EFD2045051D00696219 /* VulkanUIOverlay.cpp in Sources */,
 				C9A79EFE2045051D00696219 /* VulkanUIOverlay.h in Sources */,
+				F58CC278232949450057D5D7 /* imgui_widgets.cpp in Sources */,
 				C9A79EF12045045E00696219 /* stb_textedit.h in Sources */,
 				C9A79EF22045045E00696219 /* imconfig.h in Sources */,
 				C9A79EF32045045E00696219 /* imgui_demo.cpp in Sources */,
@@ -500,7 +506,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/MoltenVK/iOS\"",
+					"\"$(SRCROOT)/MoltenVK/iOS/dynamic\"",
 					"\"$(SRCROOT)/assimp/assimp-ios/lib/iOS/arm64\"",
 					"\"$(SRCROOT)/assimp/assimp-ios/lib\"",
 				);
@@ -525,7 +531,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/MoltenVK/iOS\"",
+					"\"$(SRCROOT)/MoltenVK/iOS/dynamic\"",
 					"\"$(SRCROOT)/assimp/assimp-ios/lib/iOS/arm64\"",
 					"\"$(SRCROOT)/assimp/assimp-ios/lib\"",
 				);
@@ -555,7 +561,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/MoltenVK/macOS\"",
+					"\"$(SRCROOT)/MoltenVK/macOS/dynamic\"",
 					"\"$(SRCROOT)/assimp/assimp-macos/lib\"",
 					"$(PROJECT_DIR)/MoltenVK/macOS",
 				);
@@ -576,7 +582,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/MoltenVK/macOS\"",
+					"\"$(SRCROOT)/MoltenVK/macOS/dynamic\"",
 					"\"$(SRCROOT)/assimp/assimp-macos/lib\"",
 					"$(PROJECT_DIR)/MoltenVK/macOS",
 				);
