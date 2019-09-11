@@ -201,7 +201,7 @@ void VulkanExampleBase::prepare()
 			loadShader(getAssetPath() + "shaders/base/uioverlay.vert.spv", VK_SHADER_STAGE_VERTEX_BIT),
 			loadShader(getAssetPath() + "shaders/base/uioverlay.frag.spv", VK_SHADER_STAGE_FRAGMENT_BIT),
 		};
-		UIOverlay.prepareResources();
+		UIOverlay.prepareResources(getAssetPath());
 		UIOverlay.preparePipeline(pipelineCache, renderPass);
 	}
 }

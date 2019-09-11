@@ -52,7 +52,7 @@ namespace vks
 	UIOverlay::~UIOverlay()	{ }
 
 	/** Prepare all vulkan resources required to render the UI overlay */
-	void UIOverlay::prepareResources()
+	void UIOverlay::prepareResources(std::string path)
 	{
 		ImGuiIO& io = ImGui::GetIO();
 
@@ -72,7 +72,8 @@ namespace vks
 			delete[] fontAsset;
 		}
 #else
-		io.Fonts->AddFontFromFileTTF("./../data/Roboto-Medium.ttf", 16.0f);
+    std::string fontFile = path + "Roboto-Medium.ttf";
+		io.Fonts->AddFontFromFileTTF(fontFile.c_str(), 16.0f);
 #endif		
 		io.Fonts->GetTexDataAsRGBA32(&fontData, &texWidth, &texHeight);
 		VkDeviceSize uploadSize = texWidth*texHeight * 4 * sizeof(char);

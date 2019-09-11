@@ -70,7 +70,7 @@ namespace vks
 		~UIOverlay();
 
 		void preparePipeline(const VkPipelineCache pipelineCache, const VkRenderPass renderPass);
-		void prepareResources();
+		void prepareResources(std::string path);
 
 		bool update();
 		void draw(const VkCommandBuffer commandBuffer);
