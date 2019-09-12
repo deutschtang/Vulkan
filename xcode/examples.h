@@ -27,12 +27,32 @@
 // In the list below, the comments indicate entries that,
 // under certain conditions, that may not run as expected.
 
-#define MVK_vulkanscene
+#define MVK_triangle
 
 // BASICS
+#ifdef MVK_triangle
+#   include "../examples/triangle/triangle.cpp"
+#endif
 
 #ifdef MVK_pipelines
 #   include "../examples/pipelines/pipelines.cpp"
+#endif
+
+#ifdef MVK_descriptorsets
+#   include "../examples/descriptorsets/descriptorsets.cpp"
+#endif
+
+#ifdef MVK_dynamicuniformbuffer
+#   include "../examples/dynamicuniformbuffer/dynamicuniformbuffer.cpp"
+#endif
+
+// Does not run. Metal does not support passing arrays between shader stages.
+#ifdef MVK_pushconstants
+#   include "../examples/pushconstants/pushconstants.cpp"
+#endif
+
+#ifdef MVK_specializationconstants
+#   include "../examples/specializationconstants/specializationconstants.cpp"
 #endif
 
 #ifdef MVK_texture
@@ -50,48 +70,77 @@
 #   include "../examples/texturearray/texturearray.cpp"
 #endif
 
+#ifdef MVK_texture3d
+#   include "../examples/texture3d/texture3d.cpp"
+#endif
+
 #ifdef MVK_mesh
 #   include "../examples/mesh/mesh.cpp"
 #endif
 
-#ifdef MVK_dynamicuniformbuffer
-#   include "../examples/dynamicuniformbuffer/dynamicuniformbuffer.cpp"
+#ifdef MVK_inputattachments
+#   include "../examples/inputattachments/inputattachments.cpp"
 #endif
 
-// Does not run. Metal does not support passing arrays between shader stages.
-#ifdef MVK_pushconstants
-#   include "../examples/pushconstants/pushconstants.cpp"
-#endif
-
-#ifdef MVK_specializationconstants
-#   include "../examples/specializationconstants/specializationconstants.cpp"
+#ifdef MVK_subpasses
+#   include "../examples/subpasses/subpasses.cpp"
 #endif
 
 #ifdef MVK_offscreen
 #   include "../examples/offscreen/offscreen.cpp"
 #endif
 
-#ifdef MVK_radialblur
-#   include "../examples/radialblur/radialblur.cpp"
-#endif
-
-#ifdef MVK_textoverlay
-#   include "../examples/textoverlay/textoverlay.cpp"
-#endif
-
 #ifdef MVK_particlefire
 #   include "../examples/particlefire/particlefire.cpp"
 #endif
 
+#ifdef MVK_stencilbuffer
+#   include "../examples/stencilbuffer/stencilbuffer.cpp"
+#endif
 
 // ADVANCED
 
-#ifdef MVK_multithreading
-#   include "../examples/multithreading/multithreading.cpp"
-#endif
-
 #ifdef MVK_scenerendering
 #   include "../examples/scenerendering/scenerendering.cpp"
+#endif
+
+#ifdef MVK_multisampling
+#   include "../examples/multisampling/multisampling.cpp"
+#endif
+
+// Does not run. Metal does not support passing matrices between shader stages.
+#ifdef MVK_hdr
+#   include "../examples/hdr/hdr.cpp"
+#endif
+
+#ifdef MVK_shadowmapping
+#   include "../examples/shadowmapping/shadowmapping.cpp"
+#endif
+
+#ifdef MVK_shadowmappingcascade
+#   include "../examples/shadowmappingcascade/shadowmappingcascade.cpp"
+#endif
+
+#ifdef MVK_shadowmappingomni
+#   include "../examples/shadowmappingomni/shadowmappingomni.cpp"
+#endif
+
+// Does not run. Sampler arrays require Metal 2.
+#ifdef MVK_texturemipmapgen
+#   include "../examples/texturemipmapgen/texturemipmapgen.cpp"
+#endif
+
+#ifdef MVK_skeletalanimation
+#   include "../examples/skeletalanimation/skeletalanimation.cpp"
+#endif
+
+#ifdef MVK_screenshot
+#   include "../examples/screenshot/screenshot.cpp"
+#endif
+
+// Performance
+#ifdef MVK_multithreading
+#   include "../examples/multithreading/multithreading.cpp"
 #endif
 
 #ifdef MVK_instancing
@@ -102,44 +151,36 @@
 #   include "../examples/indirectdraw/indirectdraw.cpp"
 #endif
 
-// Does not run. Metal does not support passing matrices between shader stages.
-#ifdef MVK_hdr
-#   include "../examples/hdr/hdr.cpp"
-#endif
-
 #ifdef MVK_occlusionquery
 #   include "../examples/occlusionquery/occlusionquery.cpp"
 #endif
 
-// Does not run. Sampler arrays require Metal 2.
-#ifdef MVK_texturemipmapgen
-#   include "../examples/texturemipmapgen/texturemipmapgen.cpp"
+#ifdef MVK_pipelinestatistics
+#   include "../examples/pipelinestatistics/pipelinestatistics.cpp"
 #endif
 
-#ifdef MVK_multisampling
-#   include "../examples/multisampling/multisampling.cpp"
+// Physically Based Rendering
+#ifdef MVK_pbrbasic
+#include "../examples/pbrbasic/pbrbasic.cpp"
 #endif
 
-#ifdef MVK_shadowmapping
-#   include "../examples/shadowmapping/shadowmapping.cpp"
+#ifdef MVK_pbribl
+#include "../examples/pbribl/pbribl.cpp"
 #endif
 
-#ifdef MVK_shadowmappingomni
-#   include "../examples/shadowmappingomni/shadowmappingomni.cpp"
+#ifdef MVK_pbrtexture
+#include "../examples/pbrtexture/main.cpp"
 #endif
 
-#ifdef MVK_skeletalanimation
-#   include "../examples/skeletalanimation/skeletalanimation.cpp"
-#endif
-
-#ifdef MVK_bloom
-#   include "../examples/bloom/bloom.cpp"
-#endif
-
+// Deferred
 // Runs in Release mode. Debug mode Metal validation will assert
 // UBO buffer length is too short for UBO size declared in shader.
 #ifdef MVK_deferred
 #   include "../examples/deferred/deferred.cpp"
+#endif
+
+#ifdef MVK_deferredmultisampling
+#   include "../examples/deferredmultisampling/deferredmultisampling.cpp"
 #endif
 
 // Does not run. Metal does not support geometry shaders.
@@ -153,20 +194,79 @@
 #   include "../examples/ssao/ssao.cpp"
 #endif
 
-
 // COMPUTE - Currently unsupported by MoltenVK
+#ifdef MVK_computeshader
+#   include "../examples/computeshader/computeshader.cpp"
+#endif
 
+#ifdef MVK_computeparticles
+#   include "../examples/computeparticles/computeparticles.cpp"
+#endif
 
-// TESSELLATION - Currently unsupported by MoltenVK
+#ifdef MVK_computenbody
+#   include "../examples/computenbody/computenbody.cpp"
+#endif
 
+#ifdef MVK_computeraytracing
+#   include "../examples/computeraytracing/computeraytracing.cpp"
+#endif
+
+#ifdef MVK_computecloth
+#   include "../examples/computecloth/computecloth.cpp"
+#endif
+
+#ifdef MVK_computecullandlod
+#   include "../examples/computecullandlod/computecullandlod.cpp"
+#endif
 
 // GEOMETRY SHADER - Unsupported by Metal
+#ifdef MVK_geometryshader
+#   include "../examples/geometryshader/geometryshader.cpp"
+#endif
 
+#ifdef MVK_viewportarray
+#   include "../examples/viewportarray/viewportarray.cpp"
+#endif
 
-// EXTENSIONS - Currently unsupported by MoltenVK
+// Tessellation Shader
+#ifdef MVK_tessellation
+#   include "../examples/tessellation/tessellation.cpp"
+#endif
 
+#ifdef MVK_terraintessellation
+#   include "../examples/terraintessellation/terraintessellation.cpp"
+#endif
 
-// MISC
+// Headless
+#ifdef MVK_renderheadless
+#   include "../examples/renderheadless/renderheadless.cpp"
+#endif
+
+#ifdef MVK_computeheadless
+#   include "../examples/computeheadless/computeheadless.cpp"
+#endif
+
+// User Interface
+#ifdef MVK_textoverlay
+#   include "../examples/textoverlay/textoverlay.cpp"
+#endif
+
+#ifdef MVK_distancefieldfonts
+#   include "../examples/distancefieldfonts/distancefieldfonts.cpp"
+#endif
+
+#ifdef MVK_imgui
+#   include "../examples/imgui/main.cpp"
+#endif
+
+// Effects
+#ifdef MVK_radialblur
+#   include "../examples/radialblur/radialblur.cpp"
+#endif
+
+#ifdef MVK_bloom
+#   include "../examples/bloom/bloom.cpp"
+#endif
 
 #ifdef MVK_parallaxmapping
 #   include "../examples/parallaxmapping/parallaxmapping.cpp"
@@ -176,12 +276,50 @@
 #   include "../examples/sphericalenvmapping/sphericalenvmapping.cpp"
 #endif
 
-#ifdef MVK_gears
-#   include "../examples/gears/gears.cpp"
+// EXTENSIONS - Currently unsupported by MoltenVK
+#ifdef MVK_conservativeraster
+#   include "../examples/conservativeraster/conservativeraster.cpp"
 #endif
 
-#ifdef MVK_distancefieldfonts
-#   include "../examples/distancefieldfonts/distancefieldfonts.cpp"
+#ifdef MVK_pushdescriptors
+#   include "../examples/pushdescriptors/pushdescriptors.cpp"
+#endif
+
+#ifdef MVK_inlineuniformblocks
+#   include "../examples/inlineuniformblocks/inlineuniformblocks.cpp"
+#endif
+
+#ifdef MVK_multiview
+#   include "../examples/multiview/multiview.cpp"
+#endif
+
+#ifdef MVK_conditionalrender
+#   include "../examples/conditionalrender/conditionalrender.cpp"
+#endif
+
+#ifdef MVK_debugmarker
+#   include "../examples/debugmarker/debugmarker.cpp"
+#endif
+
+#ifdef MVK_negativeviewportheight
+#   include "../examples/negativeviewportheight/negativeviewportheight.cpp"
+#endif
+
+#ifdef MVK_nv_ray_tracing_basic
+#   include "../examples/nv_ray_tracing_basic/nv_ray_tracing_basic.cpp"
+#endif
+
+#ifdef MVK_nv_ray_tracing_shadows
+#   include "../examples/nv_ray_tracing_shadows/nv_ray_tracing_shadows.cpp"
+#endif
+
+#ifdef MVK_nv_ray_tracing_reflections
+#   include "../examples/nv_ray_tracing_reflections/nv_ray_tracing_reflections.cpp"
+#endif
+
+// Misc
+#ifdef MVK_gears
+#   include "../examples/gears/gears.cpp"
 #endif
 
 #ifdef MVK_vulkanscene
