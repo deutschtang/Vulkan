@@ -263,6 +263,7 @@ public:
 	static void handleAppCommand(android_app* app, int32_t cmd);
 #elif (defined(VK_USE_PLATFORM_IOS_MVK) || defined(VK_USE_PLATFORM_MACOS_MVK))
 	void* setupWindow(void* view);
+  void setWindowNeedUpdate();
 #elif defined(VK_USE_PLATFORM_WAYLAND_KHR)
 	struct xdg_surface *setupWindow();
 	void initWaylandConnection();

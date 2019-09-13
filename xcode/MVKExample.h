@@ -15,6 +15,8 @@ class MVKExample {
 public:
     void renderFrame();
     void keyPressed(uint32_t keyCode);
+    void mouseMove(float dx, float dy);
+    void zoomOut(float dy);
 
     MVKExample(void* view);
     ~MVKExample();

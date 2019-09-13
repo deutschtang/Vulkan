@@ -1449,6 +1449,11 @@ void* VulkanExampleBase::setupWindow(void* view)
 	this->view = view;
 	return view;
 }
+
+void VulkanExampleBase::setWindowNeedUpdate() {
+  this->viewUpdated = true;
+}
+
 #elif defined(_DIRECT2DISPLAY)
 #elif defined(VK_USE_PLATFORM_WAYLAND_KHR)
 /*static*/void VulkanExampleBase::registryGlobalCb(void *data,

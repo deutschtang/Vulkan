@@ -46,12 +46,35 @@ static CVReturn DisplayLinkCallback(CVDisplayLinkRef displayLink,
     CVDisplayLinkCreateWithActiveCGDisplays(&_displayLink);
     CVDisplayLinkSetOutputCallback(_displayLink, &DisplayLinkCallback, _mvkExample);
     CVDisplayLinkStart(_displayLink);
+
+    [self addGestureRecognizer: self.view];
 }
 
 -(void) dealloc {
     CVDisplayLinkRelease(_displayLink);
     delete _mvkExample;
     [super dealloc];
+}
+
+-(void) addGestureRecognizer:(NSView*) view {
+  NSPanGestureRecognizer* panGesture = [[NSPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
+
+  [view addGestureRecognizer: panGesture];
+}
+
+
+-(void) handlePanGesture:(NSPanGestureRecognizer*) panGesture
+{
+  NSPoint point = [panGesture translationInView: panGesture.view];
+
+  _mvkExample->mouseMove(point.x, point.y);
+
+  [panGesture setTranslation:NSZeroPoint inView:panGesture.view];
+}
+
+- (void)scrollWheel:(NSEvent *)event
+{
+  _mvkExample->zoomOut(event.deltaY);
 }
 
 // Handle keyboard input
